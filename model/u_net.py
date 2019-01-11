@@ -52,7 +52,7 @@ def get_unet_128(input_shape=(128, 128, 3),
     center = Conv2D(1024, (3, 3), padding='same')(center)
     center = BatchNormalization()(center)
     center = Activation('relu')(center)
-    # center
+
 
     up4 = UpSampling2D((2, 2))(center)
     up4 = concatenate([down4, up4], axis=3)
